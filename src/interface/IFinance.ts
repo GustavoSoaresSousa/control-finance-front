@@ -1,46 +1,67 @@
 export interface Receitas {
   salario: number;
-  outrasReceitas: number | null;
+  outrasReceitas: number;
 }
 
 export interface Despesas {
-  condominio: number | null;
-  aluguel: number | null;
+  condominio: number;
+  aluguel: number;
   transporte: number;
   alimentacao: number;
   luz: number;
   agua: number;
   internet: number;
-  academia: number | null;
-  saude: number | null;
-  cartaoDeCredito: number | null;
-  diarista: number | null;
-  escola : number | null;
-  emprestimo: number | null;
-  celular: number | null;
-  planoDeSaude: number | null;
+  academia: number;
+  saude: number;
+  cartaoDeCredito: number;
+  diarista: number;
+  escola : number;
+  emprestimo: number;
+  celular: number;
+  planoDeSaude: number;
   supermercado: number;
-  outros: number | null;
+  outros: number;
 }
 
 export interface Lazer {
-  alimentacao: number | null;
-  assinaturasMensais: number | null;
-  festasOuBares: number | null;
-  hobbies: number | null;
-  confraternizacao: number | null;
-  outros: number | null;
+  alimentacao: number;
+  assinaturasMensais: number;
+  festasOuBares: number;
+  hobbies: number;
+  confraternizacao: number;
+  outros: number;
 }
 
 export interface Investimentos {
-  educacao: number | null;
-  investimentos: number | null;
-  reservaDeEmergencia: number | null;
+  educacao: number;
+  investimentos: number;
+  reservaDeEmergencia: number;
 }
 
 export interface IFinance {
-  receitas?: Receitas[]
-  despesas?: Despesas[]
-  lazer?: Lazer[]
-  investimentos?: Investimentos[]
+
+  _id?: string;
+  receitas: Receitas[]
+  despesas: Despesas[]
+  lazer: Lazer[]
+  investimentos: Investimentos[]
+  mes: MES
+  ano: number
+  user: string;
+}
+
+
+export enum MES {
+  JAN = '01',
+  FEV = '02',
+  MAR = '03',
+  ABR = '04',
+  MAI = '05',
+  JUN = '06',
+  JUL = '07',
+  AGO = '08',
+  SET = '09',
+  OUT = '10',
+  NOV = '11',
+  DEZ = '12'
 }

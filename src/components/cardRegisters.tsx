@@ -1,26 +1,29 @@
 import React, {useState} from "react";
 import { CardConteiner } from "../styles/cardStyle";
 import { myApi } from "../services/myApi";
+import { useNavigate } from 'react-router-dom';
+import { useFinance } from "../hooks/useFinance";
+import { IFinance } from "../interface/IFinance";
 
 export function CardRegisters() {
-  const [finance, setFinance] = useState([])
-  async function getFinance(): Promise<void>{
-    const response = (await myApi.get('/finance/findAll')).data
-    if(response){
-      setFinance(response)
-    }
-  }
+  const navigate = useNavigate();
+  const { finance } = useFinance();
+  console.log(finance)
   return (
-    <div className="d-flex flex-row p-5">
+    <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', justifyContent: "center"}} className="">
 
-        <div className="card col-sm-2 m-3 p-2">
-          <div className="card-body text-center">
-            <h5 className="card-title">Mouth/Year</h5>
-            <p className="card-text">See More</p>
+      { 
+        finance.map((finance: IFinance) => {
+          return <div key={finance._id} className="card col-sm-8 m-3 p-2">
+            <div className="card-body text-center">
+              <h5 className="card-title">{finance.mes}/{finance.ano}</h5>
+              <p className="card-text">See More</p>
+            </div>
           </div>
-        </div>
+        })
+      } 
 
-        <div className="card col-sm-2 m-3 p-2">
+        <div style={{cursor: 'pointer'}} onClick={() => navigate('/newRegister')} className="card col-sm-8 m-3 p-2">
           <div className="card-body text-center">
             <h5 className="card-title">New Register</h5>
             <p className="card-text">+</p>

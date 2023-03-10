@@ -120,7 +120,8 @@ export function NewRegisterPage() {
             <input className="form-control form-control-sm" style={{ width: 150 }} type="text" />
           </div>
         </div>
-        <button type="button" className="btn btn-outline-secondary" style={{ width: 350, alignSelf: 'center' }}>Create</button>
+        <button type="button" className="btn btn-outline-primary" style={{ width: 350, alignSelf: 'center' }}>Create</button>
+        <button type="button" className="btn btn-outline-secondary" style={{ width: 350, alignSelf: 'center' }}>Voltar</button>
       </div>
       
     </div>
