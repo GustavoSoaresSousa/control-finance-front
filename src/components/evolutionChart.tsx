@@ -107,8 +107,6 @@ export function EvolutionCharts() {
 
           </Bar>
         </div>
-        <div className="linear-scale-chart">
-        </div>
       </div>
     </div>
 

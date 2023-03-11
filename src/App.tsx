@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { Management } from './pages/Management';
 import { NewRegisterPage } from './pages/NewRegister';
 import { Dashboard } from './pages/Dashboard'
+import { Details } from './pages/Details';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path='/registers' element={<Management />} />
         <Route path='/newRegister' element={<NewRegisterPage />} />
         <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/details' element={<Details />} />
       </Routes>
       </FinanceContextProvider> 
     </Router>

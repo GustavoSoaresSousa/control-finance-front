@@ -2,17 +2,21 @@ import React from "react";
 import { useFinance } from "../hooks/useFinance";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Doughnut } from 'react-chartjs-2';
+import { useNavigate } from "react-router-dom";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 
 export function DoughnutChart() {
   const {sumOfAllRevenues, sumOfAllExpenses, sumOfAllLeisure, sumOfAllInvestments, months} = useFinance();
+  const navigate  = useNavigate();
+
   return (
     <div className="doughnut-charts-conteiner">
       <div className="doughnut-chart">
         <h4>Média de cada Receita</h4>
-        <Doughnut
+        <Doughnut 
+          onClick={() => navigate('/details')}
           options={{
             plugins: {
               legend: {
@@ -50,6 +54,7 @@ export function DoughnutChart() {
       <div className="doughnut-chart">
         <h4>Média de cada Despesa</h4>
         <Doughnut
+          onClick={() => navigate('/details')}
           options={{
             plugins: {
               legend: {
@@ -110,6 +115,7 @@ export function DoughnutChart() {
       <div className="doughnut-chart">
         <h4>Média de gastos em Lazer</h4>
         <Doughnut
+          onClick={() => navigate('/details')}
           options={{
             plugins: {
               legend: {
@@ -151,6 +157,7 @@ export function DoughnutChart() {
       <div className="doughnut-chart">
         <h4>Total de Investimentos</h4>
         <Doughnut
+          onClick={() => navigate('/details')}
           options={{
             plugins: {
               legend: {

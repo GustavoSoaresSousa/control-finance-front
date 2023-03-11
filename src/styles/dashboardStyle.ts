@@ -13,7 +13,7 @@ export const DashboardConteiner = styled.div`
     .evolution-chart{
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center; 
       width: 100%;
       height: 50vh;
@@ -22,12 +22,15 @@ export const DashboardConteiner = styled.div`
       padding: 18px;
 
       .line-chart{
-        width: 50%
+        width: 50%;
+        padding: 12px;
       }
 
       .vertical-bar-chart-and-linear-scale-chart{
+        width: 50%;
+        padding: 12px;
         .vertical-bar-chart{
-          width:100%
+          
         }
       }
  
@@ -51,6 +54,10 @@ export const DashboardConteiner = styled.div`
 
         box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
         border-radius: 8px;
+      }
+
+      .doughnut-chart:hover{
+        cursor: pointer;
       }
     }
   }
